@@ -5,9 +5,11 @@ import { useInView } from 'react-intersection-observer';
 
 const VerticalTimelineElement = ({
   children,
+  alternativeChildren,
   className,
   contentArrowStyle,
   contentStyle,
+  altContentStyle,
   date,
   dateClassName,
   icon,
@@ -26,7 +28,6 @@ const VerticalTimelineElement = ({
   if (!visible && inView) {
     setVisible(true);
   }
-
   return (
     <div
       ref={ref}
@@ -39,6 +40,20 @@ const VerticalTimelineElement = ({
       style={style}
     >
       <React.Fragment>
+        {alternativeChildren && <div
+          style={altContentStyle}
+          onClick={onTimelineElementClick}
+          className={classNames(
+            textClassName,
+            'vertical-timeline-element-alt-content',
+            {
+              'bounce-in': visible,
+              'is-hidden': !visible
+            }
+          )}
+        >
+          {alternativeChildren}
+        </div>}
         <span // eslint-disable-line jsx-a11y/no-static-element-interactions
           style={iconStyle}
           onClick={iconOnClick}
@@ -89,9 +104,11 @@ VerticalTimelineElement.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]),
+  alternativeChildren: PropTypes.node,
   className: PropTypes.string,
   contentArrowStyle: PropTypes.shape({}),
   contentStyle: PropTypes.shape({}),
+  altContentStyle: PropTypes.shape({}),
   date: PropTypes.node,
   dateClassName: PropTypes.string,
   icon: PropTypes.element,
@@ -113,9 +130,11 @@ VerticalTimelineElement.propTypes = {
 
 VerticalTimelineElement.defaultProps = {
   children: '',
+  alternativeChildren: '',
   className: '',
   contentArrowStyle: null,
   contentStyle: null,
+  altContentStyle: null,
   icon: null,
   iconClassName: '',
   iconOnClick: null,
