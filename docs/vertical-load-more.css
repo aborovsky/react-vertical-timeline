@@ -7,7 +7,7 @@
   height: 40px;
 }
 
-@media only screen and (min-width: 1170px) {
+@media (min-width: 1170px) {
   .vertical-timeline-element-icon.vertical-timeline-element-icon--button .fab-button {
     width: 60px;
     height: 60px;
