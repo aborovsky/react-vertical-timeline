@@ -21,7 +21,7 @@
   content: '';
   position: absolute;
   top: 0;
-  left: calc(300px + 32px);
+  left: calc(300px + 33px);
   height: 100%;
   width: 4px;
   background: white;
