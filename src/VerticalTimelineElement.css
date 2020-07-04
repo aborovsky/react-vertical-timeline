@@ -184,7 +184,7 @@
 .vertical-timeline-element-content-arrow {
   content: '';
   position: absolute;
-  top: 16px;
+  top: 12px;
   right: 100%;
   height: 0;
   width: 0;
