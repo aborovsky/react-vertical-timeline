@@ -141,6 +141,7 @@
   flex: 1;
 }
 .vertical-timeline-element-alt-content {
+  display: none;
   margin-right: 15px;
 }
 .vertical-timeline-element--no-children .vertical-timeline-element-content {

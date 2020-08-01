@@ -9,6 +9,7 @@
   position: relative;
   padding: 2em 0;
 }
+
 .vertical-timeline::after {
   /* clearfix */
   content: '';
@@ -21,16 +22,25 @@
   content: '';
   position: absolute;
   top: 0;
-  left: calc(300px + 33px);
+  left: 18px;
   height: 100%;
   width: 4px;
   background: white;
+}
+
+.vertical-timeline--with-alt-content .vertical-timeline-element-alt-content {
+  display: initial;
+}
+
+.vertical-timeline--with-alt-content::before {
+  left: calc(600px + 33px);
 }
 
 @media (min-width: 1170px) {
   .vertical-timeline.vertical-timeline--two-columns {
     width: 90%;
   }
+
   .vertical-timeline.vertical-timeline--two-columns:before {
     left: 50%;
     margin-left: -2px;
